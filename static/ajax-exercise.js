@@ -77,3 +77,12 @@ function orderMelons(evt) {
   // TODO: if the result code is ERROR, make it show up in red (see our CSS!)
 }
 document.querySelector('#order-form').addEventListener('submit', orderMelons);
+
+//https://dog.ceo/api/breeds/image/random
+button.addEventListener('click', (evt) => {
+  fetch('https://dog.ceo/api/breeds/image/random')
+    .then(response => response.json())
+    .then(responseData => {
+      document.querySelector('#dog-image').src = responseData.message;
+    });
+});
